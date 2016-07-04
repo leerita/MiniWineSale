@@ -7,8 +7,8 @@
       <link rel="stylesheet" type="text/css" media="all" href="daterangepicker.css" />
       <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
       <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="js/bootstrap-3.3.5-dist/moment.js"></script>
-      <script type="text/javascript" src="js/bootstrap-3.3.5-dist/daterangepicker.js"></script>
+      <script type="text/javascript" src="js/moment.js"></script>
+      <script type="text/javascript" src="js/daterangepicker.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -16,19 +16,26 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
    </head>
-   <body style="margin: 60px 0">
+   <body>
  
-  　<select class="form-control"  >
-        <option>邮箱</option>
-        <option>手机号</option>
-        <option>用户名</option>
-   
-      </select> 
 
       <div class="container">
+	
+	  　<select class="form-control"  >
+	  	    <option>邮箱</option>
+	        <option>手机号</option>
+	        <option>用户名</option>
+   
+     	 </select>
+     	 <input id="choose" type="text" class='form-control' placeholder='邮箱/手机号/用户名'>
+     	<div class='btn'>
+		<input  type="button" value="登陆">
+		<input  type="button" value="取消">
+		</div> 
 
-        <h1 style="margin: 0 0 20px 0">Configuration Builder</h1>
 
+        <h1 style="margin: 0 0 20px 0">Account Builder</h1>
+		
         <div class="well configurator">
            
           <form>
@@ -195,9 +202,9 @@
 
           </div>
           </form>
-
+		
         </div>
-
+		
         <div class="row">
 
           <div class="col-md-4 col-md-offset-2 demo">
@@ -207,13 +214,13 @@
           </div>
 
           <div class="col-md-6">
-            <h4>Configuration</h4>
+            <h4>Account</h4>
 
             <div class="well">
               <textarea id="config-text" style="height: 300px; width: 100%; padding: 10px"></textarea>
             </div>
           </div>
-
+		
         </div>
 
       </div>
@@ -223,9 +230,14 @@
       .demo i {
         position: absolute; bottom: 10px; right: 24px; top: auto; cursor: pointer;
       }
+	  .container{position: absolute;}
+      .btn{position: absolute;left: 50%;}
+      #choose{margin-top: 10px;}
       </style>
 
       <script type="text/javascript">
+
+
       $(document).ready(function() {
 
         $('#config-text').keyup(function() {
